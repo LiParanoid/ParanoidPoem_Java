@@ -1,7 +1,11 @@
 package com.paranoid.poem.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.paranoid.poem.entity.Poem;
+import com.paranoid.poem.service.WelcomeService;
 
 /**
  * @author Paranoid
@@ -9,9 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class WelcomeController {
-
+	@Autowired
+	WelcomeService welcomeService;
+	
     @GetMapping("/index")
     public String index(){
         return "Test";
     }
+    
+    @GetMapping("/getRandItem")
+    public Poem randItem(){
+    	Poem poem = welcomeService.getRandItem();
+        return poem;
+    }
+    
 }
