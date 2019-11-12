@@ -5,13 +5,15 @@ public class Poem {
 	private String title;
 	private String author;
 	private String paragraphs;
+	private String dynasty;
 	public Poem() {
 	}
-	public Poem(String id, String title, String author, String paragraphs) {
+	public Poem(String id, String title, String author, String paragraphs, String dynasty) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.paragraphs = paragraphs;
+		this.dynasty = dynasty;
 	}
 	public String getId() {
 		return id;
@@ -37,9 +39,15 @@ public class Poem {
 	public void setParagraphs(String paragraphs) {
 		this.paragraphs = paragraphs;
 	}
+	public String getDynasty() {
+		return dynasty;
+	}
+	public void setDynasty(String dynasty) {
+		this.dynasty = dynasty;
+	}
 	@Override
 	public String toString() {
-		return "Poem [id=" + id + ", title=" + title + ", author=" + author + ", paragraphs=" + paragraphs + "]";
+		return "Poem [id=" + id + ", title=" + title + ", author=" + author + ", paragraphs=" + paragraphs + ", dynasty=" + dynasty +"]";
 	}
 	
 	

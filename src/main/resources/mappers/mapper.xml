@@ -9,12 +9,13 @@
         <result column="title" property="title" jdbcType="VARCHAR" />
         <result column="author" property="author" jdbcType="VARCHAR" />
         <result column="paragraphs" property="paragraphs" jdbcType="LONGVARCHAR" />
+        <result column="dynasty" property="dynasty" jdbcType="VARCHAR" />
         
     </resultMap>
     
     
 
     <select id="getRandItem"  resultMap="poemMap">
-        select  *  from  shi_tang_info order by rand() limit 1
+        select  *  from  shi_info order by rand() limit 1
     </select>
 </mapper>
